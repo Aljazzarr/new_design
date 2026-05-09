@@ -1,17 +1,40 @@
 // @ts-nocheck
 //local storge checks-
 //local storage check color option
-let mainColors = localStorage.getItem("color-option");
-if (mainColors !== null) {
-  document.documentElement.style.setProperty("--main-color", mainColors);
+let mainColorLocal = localStorage.getItem("color-option");
+if (mainColorLocal !== null) {
+  document.documentElement.style.setProperty("--main-color", mainColorLocal);
   document.querySelectorAll(".colors-list li").forEach((element) => {
     element.classList.remove("active");
     // add active class on li element that its data-color === local storage (selected) color
-    if (element.dataset.color === mainColors) {
+    if (element.dataset.color === mainColorLocal) {
       element.classList.add("active");
     }
   });
 }
+//random bg optioin
+let backgrounOption = true;
+//variable to handle  background interval (set or clear)
+let backgroundOptInterval;
+// local storage check background option
+let backgroundLocalOption = localStorage.getItem("backgroundOption");
+if (backgroundLocalOption !== null) {
+  if (backgroundLocalOption === "true") {
+    backgrounOption = true;
+  } else {
+    backgrounOption = false;
+  }
+  // Handle active class for background optin in local storage
+  document.querySelectorAll(".random-backgrounds span").forEach((element) => {
+    element.classList.remove("active");
+  });
+  if (backgroundLocalOption === "true") {
+    document.querySelector(".random-backgrounds .yes").classList.add("active");
+  } else {
+    document.querySelector(".random-backgrounds .no").classList.add("active");
+  }
+}
+
 //Toggle spin class on icon
 document.querySelector(".toggle-settings i").onclick = function () {
   this.classList.toggle("fa-spin");
@@ -38,26 +61,51 @@ colorsLi.forEach((li) => {
     e.target.classList.add("active");
   });
 });
-// switch Random Background option (yes / no)
+// switcher Random Background option (yes / no)
 let randomBackEl = document.querySelectorAll(".random-backgrounds span");
 // Loop on every span with on click function
 randomBackEl.forEach((span) => {
-  //click on span
-  span.onclick = function () {
-    this.parentElement.querySelector(".active").classList.remove("active");
-    this.classList.add("active");
+  span.onclick = function (e) {
+    // remove active class from all
+    e.target.parentElement.querySelectorAll(".active").forEach((element) => {
+      element.classList.remove("active");
+    });
+
+    // Add avtive class on clocked child
+    e.target.classList.add("active");
+
+    if (e.target.dataset.background === "yes") {
+      backgrounOption = true;
+      randomizeImags();
+      localStorage.setItem("backgroundOption", true);
+    } else {
+      backgrounOption = false;
+      clearInterval(backgroundOptInterval);
+      localStorage.setItem("backgroundOption", false);
+    }
   };
 });
+//Randomize Background images Logic
 //Sellect landing page
 /** @type {HTMLDivElement | null} */
 let landingPage = document.querySelector(".landing-page");
 //Get images array
 let imagesArray = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
-setInterval(() => {
-  // get random number inside set interval
-  let randomNumber = Math.floor(Math.random() * imagesArray.length);
-  //Change background image url Randomly inside set interval
-  if (landingPage) {
-    landingPage.style.backgroundImage = `url("images/${imagesArray[randomNumber]}")`;
+// initialize function to randomize Bg depends on (true-false "yes - No") optional:
+// //random bg option
+// let backgrounOption = true;
+// //variable to handle  background interval (set or clear)
+// let backgroundOptInterval;
+function randomizeImags() {
+  if (backgrounOption === true) {
+    backgroundOptInterval = setInterval(() => {
+      // get random number inside set interval
+      let randomNumber = Math.floor(Math.random() * imagesArray.length);
+      //Change background image url Randomly inside set interval
+      if (landingPage) {
+        landingPage.style.backgroundImage = `url("images/${imagesArray[randomNumber]}")`;
+      }
+    }, 10000);
   }
-}, 10000);
+}
+randomizeImags();
