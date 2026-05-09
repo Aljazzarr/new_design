@@ -8,7 +8,14 @@
 body {
   font-family: "Open Sans", sans-serif;
 }
-/* Start sitting box */
+.container {
+  width: 90%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: auto;
+}
+
+/* Start setting box */
 .setting-box {
   background-color: rgb(255 255 255 / 100%);
   position: absolute;
@@ -182,3 +189,33 @@ body {
 }
 
 /* end landing page */
+/* Start About us */
+.about-us {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  display: flex;
+}
+.about-us .info-box {
+  padding: 30px;
+  flex: 1;
+}
+.about-us .info-box h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin: 0 0 10px;
+}
+.about-us .info-box p {
+  line-height: 2;
+  color: #787575;
+  margin: 0;
+}
+.about-us .image-box {
+  text-align: center;
+}
+.about-us .image-box img {
+  width: 250px;
+  padding-top: 30px;
+}
+
+/* End About us */

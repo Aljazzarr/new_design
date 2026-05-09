@@ -24,10 +24,11 @@ if (backgroundLocalOption !== null) {
   } else {
     backgrounOption = false;
   }
-  // Handle active class for background optin in local storage
+  // Handle active class for background option in local storage
   document.querySelectorAll(".random-backgrounds span").forEach((element) => {
     element.classList.remove("active");
   });
+  //add active class to clicked element in local storage
   if (backgroundLocalOption === "true") {
     document.querySelector(".random-backgrounds .yes").classList.add("active");
   } else {
@@ -71,7 +72,7 @@ randomBackEl.forEach((span) => {
       element.classList.remove("active");
     });
 
-    // Add avtive class on clocked child
+    // Add active class on clicked child
     e.target.classList.add("active");
 
     if (e.target.dataset.background === "yes") {
