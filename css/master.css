@@ -18,7 +18,7 @@ body {
 /* Start setting box */
 .setting-box {
   background-color: rgb(255 255 255 / 100%);
-  position: absolute;
+  position: fixed;
   z-index: 1000;
   width: 250px;
   min-height: 100vh;
@@ -32,7 +32,8 @@ body {
 .toggle-settings {
   position: absolute;
   right: -30px;
-  top: 100px;
+  top: 50%;
+  transform: translateY(-50%);
   background-color: rgb(255 255 255 / 100%);
   /* width: 30px;
     padding: 0px 0; */
@@ -219,3 +220,44 @@ body {
 }
 
 /* End About us */
+/* start skills */
+.skills {
+  padding-top: 50px;
+  padding-bottom: 50px;
+  background-color: #eee;
+}
+.skills h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin: 0 0 50px;
+  text-align: center;
+}
+.skills .skill-box {
+  background-color: #fff;
+  display: flex;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.skills .skill-box .skill-name {
+  font-weight: bold;
+  width: 140px;
+  text-align: center;
+  line-height: 30px;
+}
+.skills .skill-box .skill-progress {
+  height: 30px;
+  width: 100%;
+  background-color: #f6eded;
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.skills .skill-box .skill-progress span {
+  position: absolute;
+  width: 55%;
+  background-color: var(--main-color);
+  height: 100%;
+}
+
+/* End skills */
