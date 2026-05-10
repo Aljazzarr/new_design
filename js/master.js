@@ -110,3 +110,5 @@ function randomizeImags() {
   }
 }
 randomizeImags();
+// select skills selector
+let ourSkills = document.querySelector(".skills");
