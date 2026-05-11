@@ -244,12 +244,12 @@ body {
 .skills .skill-box {
   background-color: #fff;
   display: flex;
-  padding: 15px;
-  margin-bottom: 15px;
+  padding: 5px;
+  margin-bottom: 6px;
 }
 .skills .skill-box .skill-name {
   font-weight: bold;
-  width: 140px;
+  width: 100px;
   text-align: center;
   line-height: 30px;
 }
@@ -267,7 +267,36 @@ body {
   width: 0;
   background-color: var(--main-color);
   height: 100%;
-  transition: all 0.5s;
+  transition: all 2s;
+  opacity: 0.4;
 }
 
 /* End skills */
+/* Start Gallary */
+.gallary {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+.gallary h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin: 0 0 50px;
+  text-align: center;
+}
+.gallary .images-box {
+  text-align: center;
+  display: flexbox;
+}
+.gallary .images-box img {
+  width: 300px;
+  max-height: 180px;
+  padding: 3px;
+  background-color: #f6eded;
+  border: 1px solid #ccc;
+  margin: 3px;
+  cursor: pointer;
+  display: inline-flex;
+}
+
+/* End Gallary */

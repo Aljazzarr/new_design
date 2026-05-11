@@ -91,7 +91,20 @@ randomBackEl.forEach((span) => {
 /** @type {HTMLDivElement | null} */
 let landingPage = document.querySelector(".landing-page");
 //Get images array
-let imagesArray = ["01.jpg", "02.jpg", "03.jpg", "04.jpg", "05.jpg"];
+let imagesArray = [
+  "01.jpg",
+  "02.jpg",
+  "03.jpg",
+  "04.jpg",
+  "05.jpg",
+  "06.jpg",
+  "07.jpg",
+  "08.jpg",
+  "09.jpg",
+  "10.jpg",
+  "11.jpg",
+  "12.jpg",
+];
 // initialize function to randomize Bg depends on (true-false "yes - No") optional:
 // //random bg option
 // let backgrounOption = true;
