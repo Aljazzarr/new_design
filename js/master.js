@@ -110,5 +110,30 @@ function randomizeImags() {
   }
 }
 randomizeImags();
+//skills animation
 // select skills selector
 let ourSkills = document.querySelector(".skills");
+window.onscroll = function () {
+  //skills offset Top
+  let skillsOffsetTop = ourSkills.offsetTop;
+  // skills outer height
+  let skillsOuterHeight = ourSkills.offsetHeight;
+  // window height
+  let windowHeight = this.innerHeight;
+  //the part sclolled up of page
+  let windowScrollTop = window.scrollY;
+  if (
+    windowScrollTop >
+    skillsOffsetTop + skillsOuterHeight - windowHeight - 10
+  ) {
+    //sellect skill progress span
+    let allSkills = document.querySelectorAll(
+      ".skill-box .skill-progress span",
+    );
+    //loop on all skills to modify width
+    allSkills.forEach((skill) => {
+      skill.style.width = skill.dataset.progress;
+    });
+  }
+};
+//end skills animation

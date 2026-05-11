@@ -195,6 +195,7 @@ body {
   padding-top: 50px;
   padding-bottom: 50px;
   display: flex;
+  position: relative;
 }
 .about-us .info-box {
   padding: 30px;
@@ -205,11 +206,18 @@ body {
   font-size: 30px;
   color: var(--main-color);
   margin: 0 0 10px;
+  position: absolute;
+  top: 25px;
+  left: 50%;
+  transform: translatex(-50%);
 }
 .about-us .info-box p {
   line-height: 2;
   color: #787575;
   margin: 0;
+  font-size: larger;
+  text-align: center;
+  font-weight: bolder;
 }
 .about-us .image-box {
   text-align: center;
@@ -254,6 +262,7 @@ body {
   overflow: hidden;
 }
 .skills .skill-box .skill-progress span {
+  display: inline-block;
   position: absolute;
   width: 0;
   background-color: var(--main-color);
