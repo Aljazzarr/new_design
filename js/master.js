@@ -150,3 +150,28 @@ window.onscroll = function () {
   }
 };
 //end skills animation
+//Creat Popup with image
+let ourGarally = document.querySelectorAll(".gallary img");
+//loop on images
+ourGarally.forEach((img) => {
+  img.addEventListener("click", (e) => {
+    //creat overlay element
+    let overLay = document.createElement("div");
+    //add class to overlay
+    overLay.className = "popup-overlay";
+    // Append overlay to body
+    document.body.appendChild(overLay);
+    //creat Popup
+    let popupBox = document.createElement("div");
+    //add class to popup box
+    popupBox.className = "popup-box";
+    // creat the image inside the popup box
+    let popupImage = document.createElement("img");
+    //set image src
+    popupImage.src = img.src;
+    //add image to popup box
+    popupBox.appendChild(popupImage);
+    //appent the popup box to body
+    document.body.appendChild(popupBox);
+  });
+});
