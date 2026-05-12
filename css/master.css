@@ -316,6 +316,7 @@ body {
   border: 1px solid #ccc;
   padding: 20px;
   z-index: 20000;
+  max-width: 90%;
 }
 .popup-box img {
   max-width: 100%;

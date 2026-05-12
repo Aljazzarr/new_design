@@ -151,27 +151,28 @@ window.onscroll = function () {
 };
 //end skills animation
 //Creat Popup with image
+// let ourGarally = document.querySelectorAll(".gallary img");
 let ourGarally = document.querySelectorAll(".gallary img");
-//loop on images
+// //loop on images with event click
 ourGarally.forEach((img) => {
   img.addEventListener("click", (e) => {
-    //creat overlay element
+    //1 - Creat overlay element - give it a className - appen it to body :
     let overLay = document.createElement("div");
-    //add class to overlay
+
     overLay.className = "popup-overlay";
-    // Append overlay to body
+
     document.body.appendChild(overLay);
-    //creat Popup
+    //2 - creat PopupBox - give it className
     let popupBox = document.createElement("div");
-    //add class to popup box
+
     popupBox.className = "popup-box";
-    // creat the image inside the popup box
+
+    // 3- creat popupimage - set image src - appen it to popupbox
     let popupImage = document.createElement("img");
-    //set image src
-    popupImage.src = img.src;
-    //add image to popup box
+    popupImage.src = img.src; // img cums from foreach parameter talks about image in html
+
     popupBox.appendChild(popupImage);
-    //appent the popup box to body
+    //4- appent the popup box to body
     document.body.appendChild(popupBox);
   });
 });
