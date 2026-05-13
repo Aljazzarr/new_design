@@ -174,7 +174,7 @@ ourGarally.forEach((img) => {
     popupBox.appendChild(popupImage);
     //appent the popup box to body
     document.body.appendChild(popupBox);
-    // Add alt text to image ass atitle if it not  emty
+    // Add the alt text of image ass atitle if it not  emty
     if (img.alt !== null) {
       //creat image heading
       let imageHeading = document.createElement("h3");
@@ -182,7 +182,24 @@ ourGarally.forEach((img) => {
       let imageText = document.createTextNode(img.alt);
       //append image text on heading
       imageHeading.appendChild(imageText);
-      //append image heading on omage
+      //append heading to the popup Box
+      popupBox.prepend(imageHeading);
+      //creat close span
+      let closeButton = document.createElement("span");
+      // creat the close button text
+      let closeButtonText = document.createTextNode("X");
+      //append text to close button
+      closeButton.appendChild(closeButtonText);
+      // giv className to close button
+      closeButton.className = "close-button";
+      // append clos button to the popup box
+      popupBox.prepend(closeButton);
     }
   });
+});
+document.addEventListener("click", (e) => {
+  if (e.target.className == "close-button") {
+    e.target.parentElement.remove();
+    document.querySelector(".popup-overlay").remove();
+  }
 });
