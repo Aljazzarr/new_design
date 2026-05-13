@@ -151,28 +151,38 @@ window.onscroll = function () {
 };
 //end skills animation
 //Creat Popup with image
-// let ourGarally = document.querySelectorAll(".gallary img");
+
 let ourGarally = document.querySelectorAll(".gallary img");
-// //loop on images with event click
+//loop on images
 ourGarally.forEach((img) => {
   img.addEventListener("click", (e) => {
-    //1 - Creat overlay element - give it a className - appen it to body :
+    //creat overlay element
     let overLay = document.createElement("div");
-
+    //add class to overlay
     overLay.className = "popup-overlay";
-
+    // Append overlay to body
     document.body.appendChild(overLay);
-    //2 - creat PopupBox - give it className
+    //creat Popup
     let popupBox = document.createElement("div");
-
+    //add class to popup box
     popupBox.className = "popup-box";
-
-    // 3- creat popupimage - set image src - appen it to popupbox
+    // creat the image inside the popup box
     let popupImage = document.createElement("img");
-    popupImage.src = img.src; // img cums from foreach parameter talks about image in html
-
+    //set image src
+    popupImage.src = img.src;
+    //add image to popup box
     popupBox.appendChild(popupImage);
-    //4- appent the popup box to body
+    //appent the popup box to body
     document.body.appendChild(popupBox);
+    // Add alt text to image ass atitle if it not  emty
+    if (img.alt !== null) {
+      //creat image heading
+      let imageHeading = document.createElement("h3");
+      //creat text for heading
+      let imageText = document.createTextNode(img.alt);
+      //append image text on heading
+      imageHeading.appendChild(imageText);
+      //append image heading on omage
+    }
   });
 });
