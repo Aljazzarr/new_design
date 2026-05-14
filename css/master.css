@@ -470,6 +470,7 @@ body {
 }
 .features .feat-box img {
   width: 200px;
+  max-width: 100%;
 }
 .features .feat-box h4 {
   font-size: 22px;
