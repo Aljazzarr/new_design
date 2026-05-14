@@ -364,7 +364,7 @@ body {
   position: absolute;
   left: 50%;
   top: 0;
-  transform: matrix(-50%);
+  transform: translateX(-50%);
 }
 .timeline .timeline-content .year {
   margin: 20px auto;
@@ -388,18 +388,24 @@ body {
   float: left;
 }
 .timeline .timeline-content .left:before {
+  right: -35px;
+}
+.timeline .timeline-content .right {
+  float: right;
+}
+.timeline .timeline-content .right:before {
+  left: -34px;
+}
+.timeline .timeline-content .right:before,
+.timeline .timeline-content .left:before {
   content: "";
   width: 14px;
   height: 14px;
   background-color: #fff;
   border: 3px solid var(--main-color);
   position: absolute;
-  right: -35px;
   border-radius: 50%;
   top: 20px;
-}
-.timeline .timeline-content .right {
-  float: right;
 }
 .timeline .timeline-content .content {
   padding: 20px;
@@ -415,4 +421,26 @@ body {
   margin: 0;
   line-height: 1.7;
 }
+.clearfix {
+  clear: both;
+}
+.timeline .timeline-content .left .content:before,
+.timeline .timeline-content .right .content:before {
+  content: "";
+  border-style: solid;
+  border-width: 10px;
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 20px;
+}
+.timeline .timeline-content .left .content:before {
+  border-color: transparent transparent transparent white;
+  right: -20px;
+}
+.timeline .timeline-content .right .content:before {
+  left: -20px;
+  border-color: transparent white transparent transparent;
+}
+
 /* End time line  */
