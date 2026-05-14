@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 .container {
   width: 90%;
@@ -267,7 +267,7 @@ body {
   width: 0;
   background-color: var(--main-color);
   height: 100%;
-  transition: all 2s;
+  transition: all 10s;
   opacity: 0.4;
 }
 
@@ -351,6 +351,13 @@ body {
   padding-top: 50px;
   padding-bottom: 50px;
   background-color: #eee;
+}
+.timeline h4 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin: 0 0 50px;
+  text-align: center;
 }
 .timeline .timeline-content {
   position: relative;
@@ -442,5 +449,48 @@ body {
   left: -20px;
   border-color: transparent white transparent transparent;
 }
-
 /* End time line  */
+/* Srart Features */
+.features {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+.features h2 {
+  font-weight: bold;
+  font-size: 30px;
+  color: var(--main-color);
+  margin: 0 0 60px;
+  text-align: center;
+}
+.features .feat-box {
+  width: calc(100% / 3);
+  float: left;
+  text-align: center;
+  margin-bottom: 40px;
+}
+.features .feat-box img {
+  width: 200px;
+}
+.features .feat-box h4 {
+  font-size: 22px;
+  margin: 15px 0 40px;
+  position: relative;
+}
+.features .feat-box h4:before {
+  content: "";
+  width: 40px;
+  height: 4px;
+  background-color: var(--main-color);
+  position: absolute;
+  left: 50%;
+  transform: translatex(-50%);
+  bottom: -24px;
+}
+.features .feat-box p {
+  width: 80%;
+  margin: 0 auto;
+  line-height: 1.7;
+  color: #787575;
+}
+
+/* End Features */
