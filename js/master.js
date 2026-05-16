@@ -40,6 +40,8 @@ if (backgroundLocalOption !== null) {
 document.querySelector(".toggle-settings i").onclick = function () {
   this.classList.toggle("fa-spin");
   document.querySelector(".setting-box").classList.toggle("open");
+  //move heding of testimonials
+  document.querySelector(".testimonials h2").classList.toggle("open");
 };
 //Switch colors
 //sellect colors li's

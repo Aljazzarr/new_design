@@ -578,7 +578,12 @@ body {
   margin: 0 0 60px;
   position: relative;
   z-index: 2;
+  transition: 1s cubic-bezier(0.25, 1, 0.5, 1);
 }
+.testimonials h2.open {
+  margin-left: 200px;
+}
+
 .testimonials .ts-box {
   position: relative;
   z-index: 2;
