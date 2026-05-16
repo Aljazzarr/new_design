@@ -199,7 +199,19 @@ ourGarally.forEach((img) => {
 });
 document.addEventListener("click", (e) => {
   if (e.target.className == "close-button") {
+    //remove popup
     e.target.parentElement.remove();
+    //remove overlay
     document.querySelector(".popup-overlay").remove();
   }
+});
+// bullets nav
+//sellect all bullets
+const allaBullets = document.querySelectorAll(".nav-bullets .bullet");
+allaBullets.forEach((bullet) => {
+  bullet.addEventListener("click", (e) => {
+    document
+      .querySelector(e.target.dataset.section)
+      .scrollIntoView({ behavior: "smooth" });
+  });
 });

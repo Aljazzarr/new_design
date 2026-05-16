@@ -114,7 +114,57 @@ body {
 .setting-box .random-backgrounds span.active {
   opacity: 1;
 }
-/* End sitting box */
+/* End setting box */
+/* Start nav bullest */
+.nav-bullets {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px;
+  z-index: 1000;
+}
+.nav-bullets .bullet {
+  width: 20px;
+  height: 20px;
+  border: 3px solid var(--main-color);
+  margin: 20px auto;
+  cursor: pointer;
+  border-radius: 50%;
+  position: relative;
+}
+
+.nav-bullets .bullet .tooltip {
+  background-color: var(--main-color);
+  width: 100px;
+  color: white;
+  padding: 8px 10px;
+  position: absolute;
+  top: -10px;
+  right: 35px;
+  text-align: center;
+  cursor: default;
+  /* pointer event none to void js bug in case of click on tooltip  */
+  pointer-events: none;
+  display: none;
+}
+.nav-bullets .bullet .tooltip:before {
+  content: "";
+  border-style: solid;
+  border-width: 10px;
+  height: 0;
+  width: 0;
+  position: absolute;
+  top: 50%;
+  right: -20px;
+  border-color: transparent transparent transparent var(--main-color);
+  transform: translateY(-50%);
+}
+
+.nav-bullets .bullet:hover .tooltip {
+  display: block;
+}
+/* End nav bullest */
 /* star landing page */
 .landing-page {
   min-height: 100vh;
