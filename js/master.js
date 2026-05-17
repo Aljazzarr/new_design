@@ -57,25 +57,17 @@ colorsLi.forEach((li) => {
     //-- set color on local storage in New bname (color-option)1st step to local storage
     localStorage.setItem("color-option", sellectedColor);
     //remove active class from all childrens
-    e.target.parentElement.querySelectorAll(".active").forEach((element) => {
-      element.classList.remove("active");
-    });
-    //add active claas on target itself
-    e.target.classList.add("active");
+    handleActive(e);
   });
 });
+
 // switcher Random Background option (yes / no)
 let randomBackEl = document.querySelectorAll(".random-backgrounds span");
 // Loop on every span with on click function
 randomBackEl.forEach((span) => {
   span.onclick = function (e) {
-    // remove active class from all
-    e.target.parentElement.querySelectorAll(".active").forEach((element) => {
-      element.classList.remove("active");
-    });
-
-    // Add active class on clicked child
-    e.target.classList.add("active");
+    //add and remove active class
+    handleActive(e);
 
     if (e.target.dataset.background === "yes") {
       backgrounOption = true;
@@ -210,20 +202,64 @@ document.addEventListener("click", (e) => {
 // bullets nav
 //sellect all bullets
 const allaBullets = document.querySelectorAll(".nav-bullets .bullet");
-allaBullets.forEach((bullet) => {
-  bullet.addEventListener("click", (e) => {
-    document
-      .querySelector(e.target.dataset.section)
-      .scrollIntoView({ behavior: "smooth" });
-  });
-});
-// Links nav
+
 //sellect all links
 const allLinks = document.querySelectorAll(".links a");
-allLinks.forEach((link) => {
-  link.addEventListener("click", (e) => {
-    document
-      .querySelector(e.target.dataset.section)
-      .scrollIntoView({ behavior: "smooth" });
+//set  function of scroll any where
+function scrollToSection(elements) {
+  elements.forEach((ele) => {
+    ele.addEventListener("click", (e) => {
+      e.preventDefault();
+      document
+        .querySelector(e.target.dataset.section)
+        .scrollIntoView({ behavior: "smooth" });
+    });
+  });
+}
+
+scrollToSection(allLinks);
+scrollToSection(allaBullets);
+//handle active class new function
+function handleActive(ev) {
+  //remove active class
+  ev.target.parentElement.querySelectorAll(".active").forEach((element) => {
+    element.classList.remove("active");
+  });
+  //add active class on self
+  ev.target.classList.add("active");
+}
+//show hide bullets option
+//sellect bullets span
+let bulletsSpan = document.querySelectorAll(".bullets-option span");
+let bulletsContainer = document.querySelector(".nav-bullets");
+let bulletlocalItem = localStorage.getItem("bullets-option");
+if (bulletlocalItem !== null) {
+  //in local storage : remove avtive class from all spans
+  bulletsSpan.forEach((span) => {
+    span.classList.remove("active");
+  });
+  if (bulletlocalItem == "show") {
+    //in local storage : change the style display property
+    bulletsContainer.style.display = "block";
+    //add active class
+    document.querySelector(".bullets-option .yes").classList.add("active");
+  } else {
+    // change dispaly property
+    bulletsContainer.style.display = "none";
+    //add active class
+    document.querySelector(".bullets-option .no").classList.add("active");
+  }
+}
+
+bulletsSpan.forEach((span) => {
+  span.addEventListener("click", (e) => {
+    if (span.dataset.display === "show") {
+      bulletsContainer.style.display = "block";
+    } else {
+      bulletsContainer.style.display = "none";
+    }
+    handleActive(e);
+    localStorage.setItem("bullets-option", e.target.dataset.display);
+    console.log(e.target.dataset.display);
   });
 });
