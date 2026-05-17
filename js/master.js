@@ -40,7 +40,7 @@ if (backgroundLocalOption !== null) {
 document.querySelector(".toggle-settings i").onclick = function () {
   this.classList.toggle("fa-spin");
   document.querySelector(".setting-box").classList.toggle("open");
-  //move heding of testimonials
+  //move heading of testimonials
   document.querySelector(".testimonials h2").classList.toggle("open");
 };
 //Switch colors
@@ -154,7 +154,7 @@ window.onscroll = function () {
 //end skills animation
 //Creat Popup with image
 
-let ourGarally = document.querySelectorAll(".gallary img");
+let ourGarally = document.querySelectorAll(".gallery img");
 //loop on images
 ourGarally.forEach((img) => {
   img.addEventListener("click", (e) => {
@@ -212,6 +212,16 @@ document.addEventListener("click", (e) => {
 const allaBullets = document.querySelectorAll(".nav-bullets .bullet");
 allaBullets.forEach((bullet) => {
   bullet.addEventListener("click", (e) => {
+    document
+      .querySelector(e.target.dataset.section)
+      .scrollIntoView({ behavior: "smooth" });
+  });
+});
+// Links nav
+//sellect all links
+const allLinks = document.querySelectorAll(".links a");
+allLinks.forEach((link) => {
+  link.addEventListener("click", (e) => {
     document
       .querySelector(e.target.dataset.section)
       .scrollIntoView({ behavior: "smooth" });

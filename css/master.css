@@ -322,23 +322,23 @@ body {
 }
 
 /* End skills */
-/* Start Gallary */
-.gallary {
+/* Start gallery */
+.gallery {
   padding-top: 50px;
   padding-bottom: 50px;
 }
-.gallary h2 {
+.gallery h2 {
   font-weight: bold;
   font-size: 30px;
   color: var(--main-color);
   margin: 0 0 50px;
   text-align: center;
 }
-.gallary .images-box {
+.gallery .images-box {
   text-align: center;
   display: flexbox;
 }
-.gallary .images-box img {
+.gallery .images-box img {
   width: 300px;
   max-height: 180px;
   padding: 3px;
@@ -395,7 +395,7 @@ body {
   max-height: 100%;
 }
 
-/* End Gallary */
+/* End gallery */
 /* Start time line  */
 .timeline {
   padding-top: 50px;
