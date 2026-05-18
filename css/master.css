@@ -661,8 +661,8 @@ body {
   color: var(--main-color);
   margin: 0 0 60px;
   text-align: center;
-  z-index:;
 }
+
 .contact form {
   overflow: hidden;
   max-width: 600px;
@@ -711,4 +711,31 @@ body {
   transition: 0.3s;
 }
 
-/* Start contact us */
+/* End contact us */
+/* Start Grid system */
+
+@media (min-width: 576px) {
+  /*small devices  => landscape phons*/
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  /* mediam devices => tablets */
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  /*Descktops */
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  /*large screens*/
+  .container {
+    max-width: 960px;
+  }
+}
+/* End Grid system */
