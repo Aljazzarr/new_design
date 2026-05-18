@@ -113,7 +113,7 @@ function randomizeImags() {
       if (landingPage) {
         landingPage.style.backgroundImage = `url("images/${imagesArray[randomNumber]}")`;
       }
-    }, 10000);
+    }, 1000);
   }
 }
 randomizeImags();
@@ -238,7 +238,7 @@ if (bulletlocalItem !== null) {
   bulletsSpan.forEach((span) => {
     span.classList.remove("active");
   });
-  if (bulletlocalItem == "show") {
+  if (bulletlocalItem === "show") {
     //in local storage : change the style display property
     bulletsContainer.style.display = "block";
     //add active class
@@ -263,3 +263,11 @@ bulletsSpan.forEach((span) => {
     console.log(e.target.dataset.display);
   });
 });
+//reset button
+
+document.querySelector(".setting-box .reset-options").onclick = function () {
+  localStorage.removeItem("bullets-option");
+  localStorage.removeItem("color-option");
+  localStorage.removeItem("backgroundOption");
+  window.location.reload();
+};
