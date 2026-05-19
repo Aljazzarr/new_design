@@ -271,3 +271,26 @@ document.querySelector(".setting-box .reset-options").onclick = function () {
   localStorage.removeItem("backgroundOption");
   window.location.reload();
 };
+//toggle menue
+let togglBtn = document.querySelector(".header-area .toggle-menu");
+let tLinks = document.querySelector(".header-area .links");
+togglBtn.onclick = function (e) {
+  //stop prpagaation
+  e.stopPropagation();
+  this.classList.toggle("menu-active");
+  tLinks.classList.toggle("open");
+};
+// close menu when click anywhere else
+
+// document.addEventListener("click", (e) => {
+//   if (e.target !== togglBtn && e.target !== tLinks) {
+//     togglBtn.classList.remove("menu-active");
+//     tLinks.classList.remove("open");
+//   }
+// });
+document.addEventListener("click", (e) => {
+  if (!togglBtn.contains(e.target) && !tLinks.contains(e.target)) {
+    togglBtn.classList.remove("menu-active");
+    tLinks.classList.remove("open");
+  }
+});

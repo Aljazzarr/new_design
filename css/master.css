@@ -232,7 +232,7 @@ body {
 .header-area .links li .active {
   color: var(--main-color);
 }
-.header-area .toggle-menue {
+.header-area .toggle-menu {
   background: none;
   border: none;
   width: 40px;
@@ -241,21 +241,20 @@ body {
   margin-top: 12px;
   position: relative;
 }
-.header-area .toggle-menue:before {
+.header-area .toggle-menu.menu-active:before {
   content: "";
   border-width: 10px;
   border-style: solid;
-  border-color: var;
   position: absolute;
-  bottom: -15px;
+  bottom: -13px;
   left: 50%;
   margin-left: -10px;
   border-color: transparent transparent #fff transparent;
 }
-.header-area .toggle-menue:focus {
+.header-area .toggle-menu:focus {
   outline: none;
 }
-.header-area .toggle-menue span {
+.header-area .toggle-menu span {
   display: block;
   background-color: white;
   height: 4px;
@@ -308,7 +307,7 @@ body {
     color: var(--main-color);
     font-weight: bold;
   }
-  .header-area .toggle-menue {
+  .header-area .toggle-menu {
     display: inline-block;
   }
 }
