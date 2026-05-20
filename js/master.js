@@ -40,8 +40,6 @@ if (backgroundLocalOption !== null) {
 document.querySelector(".toggle-settings i").onclick = function () {
   this.classList.toggle("fa-spin");
   document.querySelector(".setting-box").classList.toggle("open");
-  //move heading of testimonials
-  document.querySelector(".testimonials h2").classList.toggle("open");
 };
 //Switch colors
 //sellect colors li's
@@ -281,16 +279,10 @@ togglBtn.onclick = function (e) {
   tLinks.classList.toggle("open");
 };
 // close menu when click anywhere else
-
-// document.addEventListener("click", (e) => {
-//   if (e.target !== togglBtn && e.target !== tLinks) {
-//     togglBtn.classList.remove("menu-active");
-//     tLinks.classList.remove("open");
-//   }
-// });
 document.addEventListener("click", (e) => {
   if (!togglBtn.contains(e.target) && !tLinks.contains(e.target)) {
     togglBtn.classList.remove("menu-active");
     tLinks.classList.remove("open");
   }
 });
+// ther is anothe way to close the menue using (if togglBtn.classlist.containes("open")).
