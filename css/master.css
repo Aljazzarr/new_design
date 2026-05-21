@@ -880,3 +880,24 @@ body {
     max-width: 960px;
   }
 } /* End Grid system */
+/* Start Footer */
+.footer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  font-size: 20px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background-color: #000403;
+  color: #eee;
+  text-align: center;
+  line-height: 1.5;
+}
+.footer i {
+  font-size: 20px;
+  align-self: center;
+}
+.footer h4 span {
+}
+
+/* End Footer */
